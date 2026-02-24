@@ -3,30 +3,14 @@
 ## Description
 This project implements a visually polished Profile Screen using Jetpack Compose. It specifically focuses on mastering the `Box` layout to create a complex overlapping UI, mimicking a classic social media profile header. 
 
-## Requirements Met
+## Key Features
 
-### 1. Box Layering & Overlap (12 Points)
-- **Background**: Uses a base `Box` with a `Brush.verticalGradient` background.
-- **Foreground Avatar**: Uses a `Surface` shaped as a circle layered on top of the background.
-- **Overlay Card**: Implements a classic "profile card" look by placing a `Card` that partially overlaps the background header and sits perfectly beneath the avatar.
-- **Intentional Positioning**: Heavily utilizes `align(Alignment.TopCenter)` and `align(Alignment.BottomCenter)` within the `Box` scope to control the placement of these layers.
-
-### 2. Modifier Techniques (8 Points)
-- **`clip(CircleShape)`**: Applied to the avatar's `Surface` to create a perfect circle.
-- **`offset`**: Used `offset(y = 100.dp)` on the avatar's container to push it down across the boundary between the background and the overlay card.
-- **`zIndex`**: Explicitly used `zIndex(0f)`, `zIndex(1f)`, and `zIndex(2f)` to guarantee the correct rendering order (Background -> Card -> Avatar).
-- **Shadow / Elevation**: Added depth using `CardDefaults.cardElevation(defaultElevation = 6.dp)` on the overlay card.
-- **Fixed Size**: Applied `size(96.dp)` to strictly constrain the avatar's dimensions.
-
-### 3. Material 3 Components (3 Points)
-Integrated over 5 Material 3 components to ensure visual polish and consistency, including:
-- `Scaffold` & `TopAppBar` (Transparent container color)
-- `Card` & `Surface`
-- `FilledTonalButton` & `OutlinedButton`
-- `AssistChip`
-- `HorizontalDivider`
-- `Icon` & `Text`
-
+* **Advanced Box Layering**: Implements a multi-layered UI using `Box` to stack a gradient background, an overlapping profile card, and a centered avatar.
+* **Intentional Positioning**: Heavily utilizes `align(Alignment.TopCenter)` and `align(Alignment.BottomCenter)` combined with `offset(y = 100.dp)` to achieve a classic "floating avatar" effect.
+* **Depth & Elevation Control**: Explicitly manages the rendering order using `zIndex` and adds visual depth through `CardDefaults.cardElevation` on the profile container.
+* **Material 3 Visual Polish**: Integration of over 5 M3 components including `Scaffold`, `CenterAlignedTopAppBar`, `FilledTonalButton`, `AssistChip`, and `HorizontalDivider` for a consistent design language.
+* **Modifier Precision**: Employs specific modifiers such as `clip(CircleShape)` for circular avatars and `size(96.dp)` for strict constraint management.
+  
 ## Screenshots
 ![Profile Screen Screenshot](screenshot2.png)
 
